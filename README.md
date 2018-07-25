@@ -193,6 +193,42 @@ for book in books:
         price=book.getElementsByTagName("price")[0]
         print("Title:%s , Category:%s ,Author:%s ,Price:%s" %(title.firstChild.data,categ,nameOfAuth.firstChild.data,price.firstChild.data))
 
+9.	Create a suitable object type and  check for file size of 0 bytes of the directory contents as shown below
+02/15/2016              10:49 PM               962                     switchfinal.py
+02/15/2016             10:49 PM               943                       switchfinal.py.bak
+01/27/2016             11:46 AM                15                        t.py
+03/31/2016            12:39 PM               840                        t1.py
+01/25/2016            10:34 AM             2,407                      tc1.py
+02/14/2017           09:13 AM                 0                           teat.py
+03/15/2016          05:52 PM                 5                             tes.py
+
+class File(object):
+    name=""
+    date=""
+    time=""
+    file_size=0
+
+    def __init__(self,name,date,time,file_size):
+        self.name=name
+        self.date=date
+        self.time=time
+        self.file_size=file_size
+        
+    def displayFile(obj):
+        print("Name : %s"%(obj.name))
+        print("Date : %s"%(obj.date))
+        print("Time : %s"%(obj.time))
+        print("Size : %d"%(obj.file_size))
+
+    def checkZero(obj):
+        if obj.file_size==0:
+            print("File size is zero")
+        else:
+            print("File size is not zero")
+
+f1=File("als","12/12/12","12:12:12",90)
+f1.displayFile()
+f1.checkZero()
 
 10.Create a suitable object type to eliminate the duplicate elements
 def RemDup(duplicate):
